@@ -1,0 +1,46 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["eslint-plugin-prettier", "chai-friendly", "prettier"],
+  "rules": {
+    "no-unused-expressions": 0,
+    "chai-friendly/no-unused-expressions": 2,
+    "comma-dangle": ["error", "never"],
+    "arrow-parens": ["error", "as-needed"],
+    "no-unused-vars": "error",
+    "no-plusplus": "off",
+    "class-methods-use-this": "error",
+    "no-param-reassign": "error",
+    "array-bracket-newline": ["error", { "multiline": true }],
+    "no-trailing-spaces": "warn",
+    "no-extra-semi": "error",
+    "object-curly-spacing": ["error"],
+    "semi-style": ["error", "last"],
+    "eol-last": ["error", "always"],
+    "no-multiple-empty-lines": ["error", { "max": 2, "maxEOF": 1 }],
+    "func-names": "off",
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "no-return-assign": "off",
+    "spaced-comment": "off",
+    "no-assigning-return-values": "off",
+    "no-unnecessary-waiting": "off",
+    "assertion-before-screenshot": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
+  }
+}
