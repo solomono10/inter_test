@@ -7,12 +7,12 @@ class Page {
   }
 
   getText(selector) {
-    return selector.getText();
+    return selector.getText().trim();
   }
 
   sendKeys(selector, value) {
     selector.clearValue();
-    selector.setValue(value);
+    selector.setValue(value.trim());
   }
 
   waitForDisplayed(selector, timeout) {
