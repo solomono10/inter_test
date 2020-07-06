@@ -16,7 +16,7 @@ class Page {
   }
 
   waitForDisplayed(selector, timeout) {
-    selector.waitForDisplayed(timeout);
+    selector.waitForDisplayed({ timeout });
   }
 
   waitForPageToLoad(selector) {
@@ -30,6 +30,13 @@ class Page {
       this.waitForDisplayed(selector, 10000);
     }
     return selector.isDisplayed();
+  }
+
+  isClickable(selector) {
+    if (!selector.isClickable()) {
+      selector.waitForClickable({ timeout: 5000, interval: 1000 });
+    }
+    return selector.isClickable();
   }
 }
 

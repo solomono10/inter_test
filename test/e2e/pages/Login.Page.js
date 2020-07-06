@@ -28,7 +28,7 @@ class LoginPage extends Page {
   }
 
   isLoginErrorTextDisplayed() {
-    return super.isDisplayed(this.textLoginError);
+    return this.isDisplayed(this.textLoginError);
   }
 
   enterEmail(emailAddress) {
@@ -39,9 +39,17 @@ class LoginPage extends Page {
     this.sendKeys(this.inputPassword, password);
   }
 
+  isDisplayed(selector) {
+    if (!selector.isDisplayed()) {
+      this.waitForDisplayed(selector, 10000);
+    }
+    return selector.isDisplayed();
+  }
+
   clickLoginButton() {
-    this.buttonLogin.waitForClickable({ timeout: 3000 });
-    this.buttonLogin.click();
+    if (this.isClickable(this.buttonLogin)) {
+      this.buttonLogin.click();
+    }
   }
 }
 

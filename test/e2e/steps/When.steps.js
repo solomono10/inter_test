@@ -8,6 +8,8 @@ When(/^I type in (.*) in the email address field$/, email => {
 });
 
 When(/^I type in (.*)in the password field$/, password => {
+  // eslint-disable-next-line no-param-reassign
+  password = password.trim();
   LoginPage.enterPassword(password);
 });
 

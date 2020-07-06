@@ -6,7 +6,7 @@ const cucumberJson = require('wdio-cucumberjs-json-reporter').default;
 
 const { DEBUG, BROWSER } = process.env;
 
-const defaultTimeoutInterval = DEBUG ? 60 * 60 * 500 : 10000;
+const defaultTimeoutInterval = DEBUG ? 60 * 60 * 500 : 50000;
 const browserName = BROWSER || 'chrome';
 
 exports.config = {
@@ -14,7 +14,7 @@ exports.config = {
   path: '/wd/hub',
   specs: ['./test/e2e/features/*.feature'],
   suites: {
-    login: ['./test/e2e/features/*.feature']
+    login: ['./test/e2e/features/Login.feature']
   },
   // ============
   // Capabilities
